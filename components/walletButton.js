@@ -73,6 +73,5 @@ function WalletButton() {
   );
 }
 
-WalletButton.acc_name = "Hello world";
 
 export default WalletButton;
