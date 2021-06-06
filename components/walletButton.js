@@ -1,4 +1,4 @@
-import detectEthereumProvider from "@metamask/detect-provider";
+
 
 import { useState, useContext } from "react";
 import Wallet from './wallet';
@@ -9,26 +9,14 @@ const last_n_acc_numbers = 3;
 function WalletButton() {
   const [account_name, setAccountName] = useState("Connect Wallet");
   let provider;
-
-  async function getProvider() {
-    try {
-      provider = await detectEthereumProvider();
-      if (provider != null) {
-        console.log("Metamask is installed!");
-      } else {
-        console.log("ERROR: metamask is null!");
-      }
-    } catch (error) {
-      console.log("ERROR: could not get metamask... please install it!");
-      console.log(error);
-    }
-  }
+  
   async function handleWalletClick() {
-    console.log(Wallet.wallet);
+    provider = Wallet.getWallet();
     console.log("You clicked me!");
     // Sets the provider variable with metamask provider
-    await getProvider();
-    if (provider === undefined) {
+    console.log(provider);
+
+    if (provider === null) {
       console.log("Metamask is not installed!");
     } else {
       // Get accounts number
