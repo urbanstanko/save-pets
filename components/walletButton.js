@@ -1,13 +1,13 @@
 import detectEthereumProvider from "@metamask/detect-provider";
 
-import { useState, useEffect } from "react";
+import { useState, useContext } from "react";
+import Wallet from './wallet';
 
 const first_n_acc_numbers = 2;
 const last_n_acc_numbers = 3;
 
 function WalletButton() {
   const [account_name, setAccountName] = useState("Connect Wallet");
-
   let provider;
 
   async function getProvider() {
@@ -23,10 +23,9 @@ function WalletButton() {
       console.log(error);
     }
   }
-
   async function handleWalletClick() {
+    console.log(Wallet.wallet);
     console.log("You clicked me!");
-
     // Sets the provider variable with metamask provider
     await getProvider();
     if (provider === undefined) {
@@ -61,6 +60,8 @@ function WalletButton() {
 
     // }
   }
+
+
   return (
     <button
       className="bg-tongue rounded-full px-4 py-2 hover:bg-tongue-light
@@ -72,6 +73,5 @@ function WalletButton() {
     </button>
   );
 }
-
 
 export default WalletButton;

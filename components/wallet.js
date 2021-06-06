@@ -1,13 +1,12 @@
-const walletStorageName = "cryptoWallet";
 
-const isServer = typeof window === "undefined";
+class Wallet {
+  message = 0;
 
-export const Wallet = () => {
-  // nastavljamo denarnico samo na clientu
-  if (!isServer) {
-    if (localStorage.getItem(walletStorageName) === null) {
-      // Nimamo se shranjene denarnice
-      localStorage.setItem();
-    }
+  get wallet() {
+    let ret = this.message;
+    this.message += 1;
+    return ret;
   }
-};
+}
+
+export default new Wallet;
