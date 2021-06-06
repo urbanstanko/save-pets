@@ -32,34 +32,13 @@ class Wallet {
     }
   }
 
-  getProvider() {
-    try {
-      detectEthereumProvider()
-        .then((provider) => {
-          this._wallet = provider;
-        })
-        .catch((err) => console.log(err));
-
-      if (this._wallet != null) {
-        console.log("Metamask is installed!");
-      } else {
-        console.log("ERROR: metamask is null!");
-      }
-    } catch (error) {
-      console.log("ERROR: could not get metamask... please install it!");
-      console.log(error);
-    }
-  }
-
   getWallet() {
-    if (this._wallet == null) {
-      // Dobimo wallet in vrnemo
-      this.getProvider();
-
-      return this._wallet;
+    if (this._provider == null) {
+      //TODO How the fuck nardis, da pocaka, dokler ne dobi vrednosti in nato vrne?!?!
+      this.init();
+      return this._provider;
     } else {
-      // Ze imamo cachan wallet in kr to vrnemo
-      return this._wallet;
+      return this._provider;
     }
   }
 

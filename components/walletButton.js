@@ -1,20 +1,14 @@
-
-
 import { useState, useContext } from "react";
-import Wallet from './wallet';
+import Wallet from "./wallet";
 
 const first_n_acc_numbers = 2;
 const last_n_acc_numbers = 3;
 
 function WalletButton() {
   const [account_name, setAccountName] = useState("Connect Wallet");
-  let provider;
-  
+
   async function handleWalletClick() {
-    provider = Wallet.getWallet();
-    console.log("You clicked me!");
-    // Sets the provider variable with metamask provider
-    console.log(provider);
+    let provider = Wallet.getWallet();
 
     if (provider === null) {
       console.log("Metamask is not installed!");
@@ -48,7 +42,6 @@ function WalletButton() {
 
     // }
   }
-
 
   return (
     <button
