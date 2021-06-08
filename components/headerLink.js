@@ -3,7 +3,7 @@ import Link from 'next/link'
 export default function HeaderLink({ linkName, name, selected, onClickFunction, children }) {
   return (
     <Link href={"/" + linkName}>
-      <a className={`px-2 text-cookie-dark hover:underline ${ selected === linkName ? "font-bold" : ""}`}>{ name }</a>
+      <a className={`px-2 text-cookie-dark hover:underline ${ selected === linkName ? "font-bold" : ""} transform transition hover:scale-110`}>{ name }</a>
     </Link>
   )
   // // TODO mogoce morm prevert, ce sploh obstaja onClickFunction

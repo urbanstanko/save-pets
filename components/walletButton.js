@@ -45,7 +45,7 @@ function WalletButton() {
 
   return (
     <button
-      className="flex flex-row bg-tongue rounded-full px-4 py-2 hover:bg-tongue-light
+      className="flex flex-row bg-tongue rounded-full px-4 py-2 hover:bg-tongue-dark
         focus:ring-2
         focus:ring-offset-cookie-dark
         transform transition hover:scale-110"
