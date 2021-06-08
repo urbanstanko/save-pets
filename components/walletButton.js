@@ -11,7 +11,9 @@ function WalletButton() {
   const { isBrowser, isServer, isNative } = useSSR();
   const [account_name, setAccountName] = useState("Connect Wallet");
   
+  let isMetamaskInstalled = !isServer && typeof window.ethereum == undefined;
   console.log("Running on server: " + isServer);
+  console.log("Is metamask installed: " + isMetamaskInstalled);
   //console.log(isMetamaskInstalled);
 
   async function handleWalletClick() {
