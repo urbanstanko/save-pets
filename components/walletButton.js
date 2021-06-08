@@ -1,11 +1,18 @@
 import { useState, useContext } from "react";
 import Wallet from "./wallet";
 
+import useSSR from 'use-ssr';
+
 const first_n_acc_numbers = 2;
 const last_n_acc_numbers = 3;
 
+
 function WalletButton() {
+  const { isBrowser, isServer, isNative } = useSSR();
   const [account_name, setAccountName] = useState("Connect Wallet");
+  
+  console.log("Running on server: " + isServer);
+  //console.log(isMetamaskInstalled);
 
   async function handleWalletClick() {
     let provider = Wallet.getWallet();
