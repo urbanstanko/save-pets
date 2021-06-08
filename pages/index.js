@@ -3,6 +3,9 @@ import PageLayout from "../components/pageLayout";
 import Wallet from "../components/wallet";
 
 export default function Home() {
+  // if (typeof window !== "undefined") {
+  //   window.ethereum.enable();
+  // }
   Wallet.init();
   return (
     <PageLayout selectedPage="">

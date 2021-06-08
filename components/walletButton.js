@@ -45,9 +45,10 @@ function WalletButton() {
 
   return (
     <button
-      className="bg-tongue rounded-full px-4 py-2 hover:bg-tongue-light
+      className="flex flex-row bg-tongue rounded-full px-4 py-2 hover:bg-tongue-light
         focus:ring-2
-        focus:ring-offset-tongue-dark"
+        focus:ring-offset-cookie-dark
+        transform transition hover:scale-110"
       onClick={handleWalletClick}
     >
       {account_name}
